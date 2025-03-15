@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Site de dépot de messages</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+  <h1 id="titre">Site pour déposer vos messages</h1>
+  <p>Bienvenue sur ce site où vous pourrez déposer vos messages</p>
+  
+  <button onclick="updateAPI()"> Mise à jour </button>
+  
+  <ul id="liste">
+    <li> Client : Bonjour</li>
+    <li> Serveur : Bonjour, comment allez-vous ?</li>
+    <li> Client : Très bien et vous ?</li>
+    <li> Serveur : Ça va</li>
+    <li> Client : Ok</li>
+  </ul>
+
+  <div class="message">
+  <input placeholder="Pseudo" id="pseudo"></input>
+  <textarea placeholder="Ecrivez ici" id="message"></textarea>
+  <button onclick="addmsg(msgs)">Envoyer le message</button>
+  <script src="script.js"></script>
+  </div>
+
+  </body>
+</html>
