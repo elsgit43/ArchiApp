@@ -11,6 +11,7 @@
   <p>Bienvenue sur ce site où vous pourrez déposer vos messages</p>
   
   <button onclick="updateAPI()"> Mise à jour </button>
+  <button onclick="toggleDarkMode()">Mode Sombre</button>
 
   <div class="serveur">
     <label for="dropdown">Se connecter au serveur :</label>
@@ -33,7 +34,7 @@
   </ul>
 
   <div class="message">
-  <input placeholder="Pseudo" id="pseudo"></input>
+  <input placeholder="Pseudo" id="pseudo"/>
   <textarea placeholder="Ecrivez ici" id="message"></textarea>
   <button onclick="addmsg(msgs)">Envoyer le message</button>
   <script src="script.js"></script>

@@ -1,34 +1,143 @@
-h1
-     {
-        color:red;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        text-align: center;
-}
-p{
-    margin-left: 30px;
-    margin-right: auto;
-}
-ul{
-    margin-left:30px;
-}
-body{
-    color:darkblue;
-    background-color:aliceblue;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
 }
 
-.message{
+h1 {
     text-align: center;
+    color: #4CAF50;
+    margin-top: 20px;
 }
 
-button{
-    margin-left: 20px;
-}
-
-textarea{
-    margin-right: 20px;
+p {
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 10px;
 }
 
 .date{
     font-size: small;
     color:gray
+}
+
+.serveur {
+    margin: 20px auto;
+    width: 80%;
+    max-width: 600px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.serveur label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.serveur select, .serveur input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.serveur button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.serveur button:hover {
+    background-color: #45a049;
+}
+
+#liste {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 600px;
+}
+
+#liste li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+#liste li:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+.message {
+    margin: 20px auto;
+    width: 80%;
+    max-width: 600px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.message input, .message textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.message button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.message button:hover {
+    background-color: #45a049;
+}
+
+body.dark-mode {
+    background-color: #333;
+    color: #f4f4f9;
+}
+h1.dark-mode {
+    color: #6fbf73;
+}
+.serveur.dark-mode {
+    background-color: #444;
+    border-color: #666;
+}
+.serveur.dark-mode select, .serveur.dark-mode input[type="text"] {
+    background-color: #555;
+    border-color: #777;
+    color: #f4f4f9;
+}
+#liste.dark-mode li {
+    border-color: #666;
+}
+#liste.dark-mode li:nth-child(odd) {
+    background-color: #555;
+}
+.message.dark-mode {
+    background-color: #444;
+    border-color: #666;
+}
+.message.dark-mode input, .message.dark-mode textarea {
+    background-color: #555;
+    border-color: #777;
+    color: #f4f4f9;
 }

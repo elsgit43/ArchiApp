@@ -26,18 +26,23 @@ msgs = [
 
 function update(liste){
     const amodif=window.document.getElementById("liste");
-    amodif.innerHTML="";
-    for(i=0;i<liste.length;i++){
-        noeud=window.document.createElement("li");
-        date=window.document.createElement("div");
-        date.className="date";
-        datetxt=window.document.createTextNode(liste[i]["date"]);
-        noeudmsg=window.document.createTextNode(liste[i]["usr"]+" : "+liste[i]["msg"])
-        date.appendChild(datetxt);
-        noeud.appendChild(date);
-        noeud.appendChild(noeudmsg)
-        amodif.appendChild(noeud);
-    }
+        amodif.innerHTML="";
+        for(i=0;i<data.length;i++){
+            noeud=window.document.createElement("li");
+            date=window.document.createElement("div");
+            date.className="date";
+            dateObj = new Date(data[i]["date"]);
+            formattedDate = dateObj.toLocaleDateString() + ' ' + dateObj.toLocaleTimeString();
+            datetxt=window.document.createTextNode(formattedDate);
+            usr = document.createElement("strong");
+            usr.textContent = data[i]["usr"] + ": ";
+            noeudmsg = document.createTextNode(data[i]["msg"]);
+            date.appendChild(datetxt);
+            noeud.appendChild(date);
+            noeud.appendChild(usr);
+            noeud.appendChild(noeudmsg)
+            amodif.appendChild(noeud);
+        }
 }
 
 function changestyle(){
@@ -46,14 +51,13 @@ function changestyle(){
     title.style="color:"+getRandomColor();
 }
 
-function getRandomColor() {
-    var letters = '0123456789ABCDEF';
-    var color = '#';
-    for (var i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-  }
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+    document.querySelector('.serveur').classList.toggle('dark-mode');
+    document.querySelector('#liste').classList.toggle('dark-mode');
+    document.querySelector('.message').classList.toggle('dark-mode');
+    document.querySelector('h1').classList.toggle('dark-mode');
+}
 
 
 function updateAPI(){
@@ -64,15 +68,20 @@ function updateAPI(){
     })
     .then(function(data) {
         const amodif=window.document.getElementById("liste");
-    amodif.innerHTML="";
+        amodif.innerHTML="";
         for(i=0;i<data.length;i++){
             noeud=window.document.createElement("li");
             date=window.document.createElement("div");
             date.className="date";
-            datetxt=window.document.createTextNode(data[i]["date"]);
-            noeudmsg=window.document.createTextNode(data[i]["usr"]+" : "+data[i]["msg"])
+            dateObj = new Date(data[i]["date"]);
+            formattedDate = dateObj.toLocaleDateString() + ' ' + dateObj.toLocaleTimeString();
+            datetxt=window.document.createTextNode(formattedDate);
+            usr = document.createElement("strong");
+            usr.textContent = data[i]["usr"] + ": ";
+            noeudmsg = document.createTextNode(data[i]["msg"]);
             date.appendChild(datetxt);
             noeud.appendChild(date);
+            noeud.appendChild(usr);
             noeud.appendChild(noeudmsg)
             amodif.appendChild(noeud);
         }
@@ -94,15 +103,20 @@ function addmsg(){
     })
     .then(function(data) {
         const amodif=window.document.getElementById("liste");
-    amodif.innerHTML="";
+        amodif.innerHTML="";
         for(i=0;i<data.length;i++){
             noeud=window.document.createElement("li");
             date=window.document.createElement("div");
             date.className="date";
-            datetxt=window.document.createTextNode(data[i]["date"]);
-            noeudmsg=window.document.createTextNode(data[i]["usr"]+" : "+data[i]["msg"])
+            dateObj = new Date(data[i]["date"]);
+            formattedDate = dateObj.toLocaleDateString() + ' ' + dateObj.toLocaleTimeString();
+            datetxt=window.document.createTextNode(formattedDate);
+            usr = document.createElement("strong");
+            usr.textContent = data[i]["usr"] + ": ";
+            noeudmsg = document.createTextNode(data[i]["msg"]);
             date.appendChild(datetxt);
             noeud.appendChild(date);
+            noeud.appendChild(usr);
             noeud.appendChild(noeudmsg)
             amodif.appendChild(noeud);
         }
