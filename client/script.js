@@ -57,7 +57,8 @@ function getRandomColor() {
 
 
 function updateAPI(){
-    fetch('http://localhost:8080/msg/getAll')
+    url=document.getElementById('dropdown').value+'/msg/getAll'
+    fetch(url)
     .then(function(response) {
         return response.json();
     })
@@ -83,10 +84,11 @@ function updateAPI(){
 function addmsg(){
     usr=document.getElementById('pseudo').value
     msg=document.getElementById('message').value
+    url=document.getElementById('dropdown').value+'/'
     console.log(usr,msg)
-    fetch('http://localhost:8080/msg/post/'+usr+"/"+msg)
+    fetch(url+"msg/post/"+usr+"/"+msg)
     document.getElementById('message').value=""
-    fetch('http://localhost:8080/msg/getAll')
+    fetch(url+'msg/getAll')
     .then(function(response) {
         return response.json();
     })
@@ -105,4 +107,24 @@ function addmsg(){
             amodif.appendChild(noeud);
         }
     });
+}
+
+function addOption() {
+    let input = document.getElementById("newOption");
+    let select = document.getElementById("dropdown");
+    let newValue = input.value.trim();
+
+    if (newValue) {
+        // Vérifier si l'option existe déjà
+        let exists = Array.from(select.options).some(option => option.value === newValue);
+        if (!exists) {
+            let newOption = document.createElement("option");
+            newOption.value = newValue;
+            newOption.textContent = newValue;
+            select.appendChild(newOption);
+            input.value = ""; // Réinitialiser le champ
+        } else {
+            alert("Cette option existe déjà !");
+        }
+    }
 }

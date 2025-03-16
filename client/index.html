@@ -11,6 +11,18 @@
   <p>Bienvenue sur ce site où vous pourrez déposer vos messages</p>
   
   <button onclick="updateAPI()"> Mise à jour </button>
+
+  <div class="serveur">
+    <label for="dropdown">Se connecter au serveur :</label>
+    <select id="dropdown">
+        <option value="https://archiapp-production.up.railway.app">https://archiapp-production.up.railway.app</option>
+    </select>
+
+    <div>
+        <input type="text" id="newOption" placeholder="Ajouter une option">
+        <button onclick="addOption()">+</button>
+    </div>
+</div>
   
   <ul id="liste">
     <li> Client : Bonjour</li>
